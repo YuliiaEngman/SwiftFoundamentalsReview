@@ -59,6 +59,14 @@ print(day[lastCharacterIndex])
 let randomIndex = day.index(lastCharacterIndex, offsetBy: -2) // moving from last index to the lest 2 indexes
 print(day[randomIndex])
 
+// Special (Escape) Characters in String Literals
+//String literals can include the following special characters:
+
+print("\tThis line will print from tab.")
+
+
+// Unicode: Unicodes: compart.com
+
 // =================== Practice =================== //
 
 /*
