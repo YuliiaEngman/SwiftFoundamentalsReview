@@ -80,9 +80,11 @@ print("\tThis line will print from tab.")
  
  */
 
-
-let numbersAsString = "1, 2, 3, 4, 5, 6, 7, 8, 9, 10"
-print(numbersAsString)
+var str1 = ""
+for num in 1...10 {
+   str1 += "\(num)"
+}
+print(str1)
 
 /*
  Question 2
