@@ -126,8 +126,8 @@ print(numbersEndingInFour) // 4 14 24 34 44 54
 
  Print each character in the string "Hello world!"
 */
-
-for char in "Hello world!" {
+let strWorld = "Hello world!"
+for char in strWorld {
     print(char)
 }
 
