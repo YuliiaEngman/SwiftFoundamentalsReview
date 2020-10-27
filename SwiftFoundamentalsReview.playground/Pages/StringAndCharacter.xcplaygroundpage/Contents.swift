@@ -102,13 +102,12 @@ for num in 5...51 {
     }
 }
 
+// OR:
+//for num in 5...51 where num % 2 == 0 {
+//  resultString += "\(num) "
+//}
+
 print(resultString)
-
-
-
-
-
-
 
 
 /*
