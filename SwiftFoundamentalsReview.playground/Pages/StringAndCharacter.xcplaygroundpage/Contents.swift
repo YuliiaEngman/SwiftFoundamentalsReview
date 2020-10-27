@@ -137,8 +137,15 @@ for char in strWorld {
  Print out the last character in the string below. You cannot use the Character literal "!" (i.e you must access myStringSeven's characters).
 
  let myStringSeven = "Hello world!"
+*/
 
- Solution
+let myStringSeven = "Hello world!"
+
+print(myStringSeven[myStringSeven.index(before: myStringSeven.endIndex)]) //!
+
+
+
+/*
  Question 6
 
  You are given a string stored in the variable aString. Create new string named replacedString that contains the characters of the original string with all the occurrences of the character "e" replaced by "*".
