@@ -114,15 +114,24 @@ var numbersEndingInFour = ""
 for num in 1...60 where String(num).hasSuffix("4") {
    numbersEndingInFour += "\(num) "
 }
-print(numbersEndingInFour) // 4 14 24 34 44 54 
+// OR:
+//for num in 1...60 where num % 10 == 4 {
+//  numbersEndingInFour += "\(num) "
+//}
+
+print(numbersEndingInFour) // 4 14 24 34 44 54
 
 /*
- 
  Question 4
 
  Print each character in the string "Hello world!"
+*/
 
- Solution
+for char in "Hello world!" {
+    print(char)
+}
+
+/*
  Question 5
 
  Print out the last character in the string below. You cannot use the Character literal "!" (i.e you must access myStringSeven's characters).
