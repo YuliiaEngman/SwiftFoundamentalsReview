@@ -75,23 +75,18 @@ print("\tThis line will print from tab.")
  Question 1
 
  Write code that prints out all the numbers from 1 to 10 as a single string.
-
- Solution
- 
  */
 
 var str1 = ""
 for num in 1...10 {
    str1 += "\(num) "
 }
-print(str1)
+print(str1) // 1 2 3 4 5 6 7 8 9 10
 
 /*
  Question 2
 
  Write code that prints out all the even numbers from 5 to 51 as a single string.
-
- Solution
  */
 
 var resultString = ""
@@ -107,15 +102,22 @@ for num in 5...51 {
 //  resultString += "\(num) "
 //}
 
-print(resultString)
+print(resultString) // 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50
 
 
 /*
  Question 3
 
  Write code that prints out every number ending in 4 between 1 and 60 as a single string.
+ */
+var numbersEndingInFour = ""
+for num in 1...60 where String(num).hasSuffix("4") {
+   numbersEndingInFour += "\(num) "
+}
+print(numbersEndingInFour) // 4 14 24 34 44 54 
 
- Solution
+/*
+ 
  Question 4
 
  Print each character in the string "Hello world!"
