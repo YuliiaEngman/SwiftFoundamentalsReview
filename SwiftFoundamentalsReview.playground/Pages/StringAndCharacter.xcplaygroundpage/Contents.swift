@@ -82,7 +82,7 @@ print("\tThis line will print from tab.")
 
 var str1 = ""
 for num in 1...10 {
-   str1 += "\(num)"
+   str1 += "\(num) "
 }
 print(str1)
 
@@ -94,25 +94,15 @@ print(str1)
  Solution
  */
 
-func printEvenNumbers() -> String {
-    
-    var resultString = ""
-    
-    for num in 5...51 {
-        if num % 2 == 0 {
-                  resultString.append("\(num)") // String(num)
-              }
+var resultString = ""
+
+for num in 5...51 {
+    if num % 2 == 0 {
+        resultString.append("\(num) ") // String(num)
     }
-    
-//    for num in numbers {
-//        if num % 2 == 0 {
-//            resultString.append("\(num)") // String(num)
-//        }
-//    }
-    return resultString
 }
 
-print(printEvenNumbers)
+print(resultString)
 
 
 
