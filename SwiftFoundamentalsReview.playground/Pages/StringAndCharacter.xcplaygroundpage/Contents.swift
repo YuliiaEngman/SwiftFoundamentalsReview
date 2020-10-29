@@ -144,7 +144,6 @@ let myStringSeven = "Hello world!"
 print(myStringSeven[myStringSeven.index(before: myStringSeven.endIndex)]) //!
 
 
-
 /*
  Question 6
 
@@ -157,8 +156,14 @@ print(myStringSeven[myStringSeven.index(before: myStringSeven.endIndex)]) //!
  Input: let aString = "Replace the letter e with *"
 
  Expected values: replacedString = "R*plac* th* l*tt*r * with *"
+*/
 
- Solution
+
+
+
+
+
+/*
  Question 7
 
  You are given a string stored in variable aString. Create a new string called reverse that contains the original string in reverse order. Print the reversed string. You cannot used built-in reverse.
