@@ -160,8 +160,43 @@ print(myStringSeven[myStringSeven.index(before: myStringSeven.endIndex)]) //!
 
 
 
+// b = [1, 2, 3]
+// reverseArray(b)
+// print(b) -> [3, 2, 1]
+
+// is nothing to reverse eturn empty
+
+func reverseArray(a: [Int]) -> [Int] {
+
+  var reverseArr = [Int]()
+
+  guard !a.isEmpty else { // O1
+    return reverseArr
+  }
+
+  for num in a { // O(n)
+    reverseArr = [num] + reverseArr //(O1?) 1, [2 3], [3, 2, 1]
+    // reverseArr = num + reverseArr NOT!!!!!!!! Int and [Int] are different types!!!!!!!!
+  } // Total O(n2)
+
+  return reverseArr
+  //
+}
+
+print(reverseArray(a:[1, 2, 3]))
+
+// Look inout parameters!
+// Run time complexity
+// Type error
+// adding to the beginning or array takes O(n)
+// But to the end of array you can add in constant time!
+// Linear time
 
 
+//print([2, 5] + [7, 9])
+// print(5 + [2, 5])
+
+// secretly, there's another "loop" in [num]+reverseArr
 
 /*
  Question 7
