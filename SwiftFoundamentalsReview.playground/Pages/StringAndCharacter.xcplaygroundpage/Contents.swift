@@ -224,6 +224,42 @@ func reverseArrayLinearTime(a: [Int]) -> [Int] {
 print(reverseArrayLinearTime(a:[1, 2, 3]))
 
 /*
+ func reverseList(_ node: NodeSinglyLL?) -> NodeSinglyLL? {
+     // we need to pointers:
+     
+     var node = node
+     
+     var previousNode: NodeSinglyLL? // this is will be our reversed list returned
+     var nextNode: NodeSinglyLL? // temp node (why do we need that? if we have next in our Node class?)
+     
+     
+     while let currentNode = node {
+         nextNode = currentNode.next
+         // main part of this problem in at those following 2 lines
+         // this line will be reversing the current next pointer
+         // ->
+         // <-
+         currentNode.next = previousNode // reversing // 333 (cn) 111 (pm)
+         previousNode = currentNode //nil, 333, 111, 8 // 11 = current
+
+
+         // keep traversing the list
+         node = nextNode
+     }
+     
+     return previousNode // reverse nodes
+     
+ }
+
+ let modifiedNode = reverseList(node333)
+
+ printingLL(node: modifiedNode)
+ */
+
+
+
+
+/*
  Question 7
 
  You are given a string stored in variable aString. Create a new string called reverse that contains the original string in reverse order. Print the reversed string. You cannot used built-in reverse.
