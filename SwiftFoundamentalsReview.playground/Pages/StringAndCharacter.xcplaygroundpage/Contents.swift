@@ -198,24 +198,35 @@ print(reverseArray(a:[1, 2, 3]))
 
 // secretly, there's another "loop" in [num]+reverseArr
 
-func reverseArrayLinearTime(a: [Int]) {
+func reverseArrayLinearTime(
+    _ a: inout [Int]) {
     
-    var inputArr = a
+    guard !a.isEmpty else { // O1
+      return
+    }
+    
     var startIndex = 0
     var endIndex = a.count - 1
     
-    while  a[startIndex] < a[endIndex] {
-        inputArr.swapAt(startIndex, endIndex)
+    while  startIndex < endIndex {
+        a.swapAt(startIndex, endIndex) // O1
         startIndex += 1
         endIndex -= 1
     }
-    print(inputArr)
 }
 
-//reverseArrayLinearTime(a:[1, 2, 3])
-reverseArrayLinearTime(a:[1, 2, 2, 3, 9, 0])
+//var a = [1, 2, 3] // [3, 2, 1]
+//reverseArrayLinearTime(&a)
+//print(a)
+
+var a = [1, 2, 2, 5, 3, 9, 0] // [0, 9, 3, 5, 2, 2, 1]
+reverseArrayLinearTime(&a)
+print(a)
+
 
 /*
+ Looked for ideas in internet:
+ 
  func reverse(_ array: inout [Int], startP: Int, endP: Int){
   var _st = startP
   var _nd = endP
@@ -225,7 +236,6 @@ reverseArrayLinearTime(a:[1, 2, 2, 3, 9, 0])
     _nd -= 1
   }
  }
- 
  */
 
 
