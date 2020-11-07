@@ -198,51 +198,34 @@ print(reverseArray(a:[1, 2, 3]))
 
 // secretly, there's another "loop" in [num]+reverseArr
 
-func reverseArrayLinearTime(a: [Int]) -> [Int] {
-
-    var reverseArr = a.reversed()
+func reverseArrayLinearTime(a: [Int]) {
     
-  guard !a.isEmpty else { // O1
-    return reverseArr
-  }
-  
-  return reverseArr
-  //
+    var inputArr = a
+    var startIndex = 0
+    var endIndex = a.count - 1
+    
+    while  a[startIndex] < a[endIndex] {
+        inputArr.swapAt(startIndex, endIndex)
+        startIndex += 1
+        endIndex -= 1
+    }
+    print(inputArr)
 }
 
-print(reverseArrayLinearTime(a:[1, 2, 3]))
+//reverseArrayLinearTime(a:[1, 2, 3])
+reverseArrayLinearTime(a:[1, 2, 2, 3, 9, 0])
 
 /*
- func reverseList(_ node: NodeSinglyLL?) -> NodeSinglyLL? {
-     // we need to pointers:
-     
-     var node = node
-     
-     var previousNode: NodeSinglyLL? // this is will be our reversed list returned
-     var nextNode: NodeSinglyLL? // temp node (why do we need that? if we have next in our Node class?)
-     
-     
-     while let currentNode = node {
-         nextNode = currentNode.next
-         // main part of this problem in at those following 2 lines
-         // this line will be reversing the current next pointer
-         // ->
-         // <-
-         currentNode.next = previousNode // reversing // 333 (cn) 111 (pm)
-         previousNode = currentNode //nil, 333, 111, 8 // 11 = current
-
-
-         // keep traversing the list
-         node = nextNode
-     }
-     
-     return previousNode // reverse nodes
-     
+ func reverse(_ array: inout [Int], startP: Int, endP: Int){
+  var _st = startP
+  var _nd = endP
+  while _nd > _st {
+    swap(&array[_st], &array[_nd])
+    _st += 1
+    _nd -= 1
+  }
  }
-
- let modifiedNode = reverseList(node333)
-
- printingLL(node: modifiedNode)
+ 
  */
 
 
