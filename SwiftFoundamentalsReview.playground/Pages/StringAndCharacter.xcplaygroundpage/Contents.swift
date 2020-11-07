@@ -190,7 +190,7 @@ print(reverseArray(a:[1, 2, 3]))
 // Type error
 // adding to the beginning or array takes O(n)
 // But to the end of array you can add in constant time!
-// try to solve this wueation in linear time
+// try to solve this queation in linear time
 
 
 //print([2, 5] + [7, 9])
@@ -200,23 +200,12 @@ print(reverseArray(a:[1, 2, 3]))
 
 func reverseArrayLinearTime(a: [Int]) -> [Int] {
 
-  var reverseArr = [Int]()
-
+    var reverseArr = a.reversed()
+    
   guard !a.isEmpty else { // O1
     return reverseArr
   }
-
-//  for num in a { // O(n)
-//    reverseArr = [num] + reverseArr //(O1?) 1, [2 3], [3, 2, 1]
-//    // reverseArr = num + reverseArr NOT!!!!!!!! Int and [Int] are different types!!!!!!!!
-//  } // Total O(n2)
-    
-    var previous = 0
-    
-    let newLastInt = a[0] {
-        previous = newHead[index]
-    }
-
+  
   return reverseArr
   //
 }
