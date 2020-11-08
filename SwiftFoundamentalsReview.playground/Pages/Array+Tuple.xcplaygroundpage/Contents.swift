@@ -2,7 +2,8 @@
 
 import Foundation
 
-func bestProfessionals(pros: [[Int]], k: Int) -> [Int] {
+func bestProfessionals(pros: [[Int]]) -> Int { // trying to solve and return array of best results from worst to best
+    
     // Step 1: Find a max_distance
     var maxDistance = 0
     
@@ -12,21 +13,35 @@ func bestProfessionals(pros: [[Int]], k: Int) -> [Int] {
         }
     }
     
+    /*
+    var prefessional1PMS = 0
+    var prefessional2PMS = 0
+    var prefessional3PMS = 0
+    var prefessional4PMS = 0
+    
     // Step 2: Calculate for every professional their PMS
     for tuple in pros {
-        if pros[0] == 0 {
-          let prefessional1PMS = (maxDistance - tuple[0]) * tuple[1]
-        } if pros[1] == 1 {
-           let prefessional2PMS = (maxDistance - tuple[0]) * tuple[1]
-        } if pros[2] == 2 {
-            let prefessional3PMS = (maxDistance - tuple[0]) * tuple[1]
-        } if pros[3] == 3 {
-            let prefessional4PMS = (maxDistance - tuple[0]) * tuple[1]
+        if pros.firstIndex {
+          prefessional1PMS = (maxDistance - tuple[0]) * tuple[1]
+        } else if pros.firstIndex + 1 == 1 {
+           prefessional2PMS = (maxDistance - tuple[0]) * tuple[1]
+        } else if pros.firstIndex + 2 == 2 {
+            prefessional3PMS = (maxDistance - tuple[0]) * tuple[1]
+        } else if pros.firstIndex + 3 == 3 {
+            prefessional4PMS = (maxDistance - tuple[0]) * tuple[1]
         }
     }
+    */
+    /*
+     let arr = ["a","b","c","a"]
+
+     let indexOfA = arr.firstIndex(of: "a") // 0
+     let indexOfB = arr.lastIndex(of: "a") // 3
+     */
     
-    var bestPMSfromProfessionals = [prefessional1PMS, prefessional2PMS, prefessional3PMS,prefessional4PMS]
-    bestProfessionals.sorted()
+    //var bestPMSfromProfessionals = prefessional1PMS, prefessional2PMS, prefessional3PMS,prefessional4PMS
     
-    
+    return maxDistance
 }
+
+print(bestProfessionals(pros: [[5, 4], [4, 3], [6, 5], [3, 5]]))
