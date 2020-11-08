@@ -50,25 +50,33 @@ func bestProfessionals(pros: [[Int]], k: Int) -> [Int] { // trying to solve and 
     
     // Step 3: sort dictionary by value
     
-   let sortedDictValues = prosPMSresultsDict.values.sorted(by: {$0 > $1})
-let sortedDictKeys = prosPMSresultsDict.keys.sorted(by: {$0 > $1})
+  let sortedDictValues = prosPMSresultsDict.values.sorted(by: {$0 > $1})
+    print(sortedDictValues)
+    
+    let kIndex = sortedDictValues.count - k
+    let uniqueSortedDictValues = Set(sortedDictValues)
+    let kValue = uniqueSortedDictValues[kIndex]
+    
+  let sortedDictKeys = prosPMSresultsDict.keys.sorted(by: {$0 > $1})
+    print()
+    
     // Step 4: using k to limit my result output
     
     var resultIndeces = [Int]()
     
     //
-    if sortedDictValues.count <= k {
-        return sortedDictKeys
-    }
+//if prosPMSresultsDict.count <= k {
+//        return sortedDictKeys
+//    }
     
     for (key, value) in prosPMSresultsDict {
-        if sortedDictValues.contains(value) {
+        if sortedDictValues[0...k-1].contains(value) {
             resultIndeces.append(key)
         }
     }
     
+    return resultIndeces
     
-   return resultIndeces
 }
 
 print(bestProfessionals(pros: [[5, 4], [4, 3], [6, 5], [3, 5]], k: 2)) // should return [3, 1]
