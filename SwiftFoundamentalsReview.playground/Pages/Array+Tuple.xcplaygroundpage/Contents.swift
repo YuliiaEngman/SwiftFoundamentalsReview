@@ -2,7 +2,7 @@
 
 import Foundation
 
-func bestProfessionals(pros: [[Int]]) -> Int { // trying to solve and return array of best results from worst to best
+func bestProfessionals(pros: [[Int]]) -> [Int:Int] { // trying to solve and return array of best results from worst to best
     
     // Step 1: Find a max_distance
     var maxDistance = 0
@@ -31,31 +31,23 @@ func bestProfessionals(pros: [[Int]]) -> Int { // trying to solve and return arr
           freqDict[num] = 1
         }
       }
-     
+     */
+    
      var prosPMSresultsDict = [Int: Int]()
      
     for tuple in pros {
-        if pros.firstIndex {
-          prefessional1PMS = (maxDistance - tuple[0]) * tuple[1]
-        } else if pros.firstIndex + 1 == 1 {
-           prefessional2PMS = (maxDistance - tuple[0]) * tuple[1]
-        } else if pros.firstIndex + 2 == 2 {
-            prefessional3PMS = (maxDistance - tuple[0]) * tuple[1]
-        } else if pros.firstIndex + 3 == 3 {
-            prefessional4PMS = (maxDistance - tuple[0]) * tuple[1]
+        if tuple == pros[0] {
+          prosPMSresultsDict[0] = (maxDistance - tuple[0]) * tuple[1]
+        } else if tuple == pros[1] {
+           prosPMSresultsDict[1] = (maxDistance - tuple[0]) * tuple[1]
+        } else if tuple == pros[2] {
+            prosPMSresultsDict[2] = (maxDistance - tuple[0]) * tuple[1]
+        } else if tuple == pros[3] {
+            prosPMSresultsDict[3] = (maxDistance - tuple[0]) * tuple[1]
         }
     }
-    */
-    /*
-     let arr = ["a","b","c","a"]
-
-     let indexOfA = arr.firstIndex(of: "a") // 0
-     let indexOfB = arr.lastIndex(of: "a") // 3
-     */
     
-    //var bestPMSfromProfessionals = prefessional1PMS, prefessional2PMS, prefessional3PMS,prefessional4PMS
-    
-    return maxDistance
+    return prosPMSresultsDict
 }
 
 print(bestProfessionals(pros: [[5, 4], [4, 3], [6, 5], [3, 5]]))
