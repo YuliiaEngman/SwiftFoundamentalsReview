@@ -2,7 +2,7 @@
 
 import Foundation
 
-func bestProfessionals(pros: [[Int]]) { // trying to solve and return array of best results from worst to best
+func bestProfessionals(pros: [[Int]], k: Int) { // trying to solve and return array of best results from worst to best
     
     // Step 1: Find a max_distance
     var maxDistance = 0
@@ -54,10 +54,32 @@ func bestProfessionals(pros: [[Int]]) { // trying to solve and return array of b
     let sortedDictByValues = prosPMSresultsDict.sorted(by: {$0.value < $1.value})
     print(sortedDictByValues)
     
-// let dictValInc = dict.sorted(by: { $0.value < $1.value })
+    // I found the first choice of pro
+//    var largestValue = 0
+//    var keyForLargestValue = 0
+//    for (key, value) in sortedDictByValues {
+//        if value > largestValue {
+//            largestValue = value
+//            keyForLargestValue = key
+//        }
+//    }
+    
+    // need to finf all the choices
+    // let intIndex = 1 // where intIndex < myDictionary.count
+    //let index = myDictionary.index(myDictionary.startIndex, offsetBy: intIndex)
+    //myDictionary.keys[index]
+    
+    let kIndexOnDict = sortedDictByValues.index(sortedDictByValues.endIndex, offsetBy: -k)
+    var keyForLargestValue = [Int]()
+    
+    for key in sortedDictByValues[kIndexOnDict ... sortedDictByValues.endIndex] {
+        keyForLargestValue.append(key)
+    }
+    
+    print(keyForLargestValue)
     
 }
 
-print(bestProfessionals(pros: [[5, 4], [4, 3], [6, 5], [3, 5]])) // should return [3, 1]
+print(bestProfessionals(pros: [[5, 4], [4, 3], [6, 5], [3, 5]], k: 2)) // should return [3, 1]
 
 
