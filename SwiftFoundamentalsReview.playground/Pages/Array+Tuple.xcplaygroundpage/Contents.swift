@@ -20,6 +20,20 @@ func bestProfessionals(pros: [[Int]]) -> Int { // trying to solve and return arr
     var prefessional4PMS = 0
     
     // Step 2: Calculate for every professional their PMS
+     and store that in dictionary, where the key is index of pro and value is pro's PMS number
+     
+    var freqDict = [Int: Int]()
+     
+      for num in numbers {
+        if let count = freqDict[num] {
+          freqDict[num] = count + 1
+        } else {
+          freqDict[num] = 1
+        }
+      }
+     
+     var prosPMSresultsDict = [Int: Int]()
+     
     for tuple in pros {
         if pros.firstIndex {
           prefessional1PMS = (maxDistance - tuple[0]) * tuple[1]
