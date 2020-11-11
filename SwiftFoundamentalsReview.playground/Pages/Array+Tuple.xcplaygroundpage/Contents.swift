@@ -168,7 +168,7 @@ func bestProfessionals2(pros: [[Int]], k: Int) -> [Int] { // trying to solve and
 //       }
     
     
-    for (index, pro) in pros {
+    for (index, pro) in pros.enumerated() {
               prosPMSresultsDict[count] = (maxDistance - tuple[0]) * tuple[1]
               count += 1
           }
