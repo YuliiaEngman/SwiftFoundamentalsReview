@@ -120,7 +120,7 @@ import Foundation
  
  */
 
-func bestProfessionals2(pros: [[Int]], k: Int) { // trying to solve and return array of best results from worst to best
+func bestProfessionals2(pros: [[Int]], k: Int) -> [Int] { // trying to solve and return array of best results from worst to best
     
     // Step 1: Find a max_distance
     var maxDistance = 0
@@ -210,20 +210,23 @@ func bestProfessionals2(pros: [[Int]], k: Int) { // trying to solve and return a
     //let count == 1000
       while resultArr.count < k {
             for (index, value) in PMSscoreArr.enumerated() {
-                if PMSscoreArr.max() == value {
+                if value == PMSscoreArr.max() {
                     resultArr.append(index)
-                    PMSscoreArr(at: index) == 0
-                   
+                    PMSscoreArr[index] = 0
             }
-        
         }
-        resultArr.count == k
-                           PMSscoreArr.isEmpty
     }
     
     
     print(resultArr)
     
+    if resultArr.count > k {
+        return Array(resultArr[0...k-1])
+    } else {
+        return resultArr
+    }
+    
+   // return resultArr
     
     /*
      //print(prosPMSresultsDict)
@@ -254,6 +257,6 @@ func bestProfessionals2(pros: [[Int]], k: Int) { // trying to solve and return a
     
 }
 
-print(bestProfessionals2(pros: [[5, 4], [4, 3], [4, 3], [6, 5], [3, 5]], k: 4)) // should return [3, 1]
+print(bestProfessionals2(pros: [[5, 4], [4, 3], [4, 3], [6, 5], [3, 5]], k: 2)) // should return [4, 1]
 
 
