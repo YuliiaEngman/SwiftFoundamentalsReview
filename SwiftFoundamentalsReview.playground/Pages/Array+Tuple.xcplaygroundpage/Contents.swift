@@ -131,129 +131,35 @@ func bestProfessionals2(pros: [[Int]], k: Int) -> [Int] { // trying to solve and
         }
     }
     
-    
-    // Step 2: Calculate for every professional their PMS
-    // and store that in dictionary, where the key is index of pro and value is pro's PMS number
-    
-    
-    // var prosPMSresultsDict = [Int]()
-    var count = 0
-    // this code is correct but I need update to make it work for all keys
-    //    for tuple in pros {
-    //        if tuple == pros[0] {
-    //          prosPMSresultsDict[0] = (maxDistance - tuple[0]) * tuple[1]
-    //        } else if tuple == pros[1] {
-    //           prosPMSresultsDict[1] = (maxDistance - tuple[0]) * tuple[1]
-    //        } else if tuple == pros[2] {
-    //            prosPMSresultsDict[2] = (maxDistance - tuple[0]) * tuple[1]
-    //        } else if tuple == pros[3] {
-    //            prosPMSresultsDict[3] = (maxDistance - tuple[0]) * tuple[1]
-    //        }
-    //    }
-    // [3: 15, 2: 0, 0: 4, 1: 6]
-    
-    // I need to rewrite the code above that it would work with all cases
-    // gives me incorrect key,value pairs
-    
-    //    for tuple in pros {
-    //      if tuple == pros[0] {
-    //       prosPMSresultsDict[0] = (maxDistance - tuple[0]) * tuple[1]
-    //        count += 1
-    //      } else {
-    //        prosPMSresultsDict[count] = (maxDistance - tuple[0]) * tuple[1]
-    //        count += 1
-    //        }
-    //    } // [0: 4, 3: 15, 2: 0, 1: 6]
-    
-    //    for tuple in pros {
-    //           prosPMSresultsDict[count] = (maxDistance - tuple[0]) * tuple[1]
-    //           count += 1
-    //       }
-    
     var PMSscore = 0
     var PMSscoreArr = [Int]()
     
     for pro in pros {
         PMSscore = (maxDistance - pro[0]) * pro[1]
-        count += 1
+        //count += 1
         PMSscoreArr.append(PMSscore)
     }
     
     print("\(PMSscoreArr)")
     
-    // Get index of highest values:
-    
-    
-    
-    var largestValue = 0
     var resultArr = [Int]()
-    
-    //    for (index, value) in PMSscoreArr.enumerated() {
-    //        if PMSscoreArr.max() == value {
-    //            resultArr.append(index)
-    //            PMSscoreArr.remove(at: index)
-    //        } else if resultArr.count == k || PMSscoreArr.isEmpty {
-    //            break
-    //        }
-    //    }
-    
-    
-//    while resultArr.count < k || !PMSscoreArr.isEmpty {
-//        for (index, value) in PMSscoreArr.enumerated() {
-//            if PMSscoreArr.max() == value {
-//                resultArr.append(index)
-//                PMSscoreArr.remove(at: index)
-//            }
-//        }
-//    }
-    
-    //let count == 1000
+
       while resultArr.count < k {
             for (index, value) in PMSscoreArr.enumerated() {
                 if value == PMSscoreArr.max() {
                     resultArr.append(index)
                     PMSscoreArr[index] = 0
-            }
+                }
         }
     }
     
-    
-    print(resultArr)
+    // print(resultArr)
     
     if resultArr.count > k {
         return Array(resultArr[0...k-1])
     } else {
         return resultArr
     }
-    
-   // return resultArr
-    
-    /*
-     //print(prosPMSresultsDict)
-     
-     // Step 3: sort dictionary by value
-     
-     //let sortedDictValues = prosPMSresultsDict.values.sorted(by: {$0 > $1})
-     //    let sortedDictByKey = prosPMSresultsDict.keys.sorted(by: {$1 > $0})
-     //    print(Dictionary<sortedDictByKey>)
-     
-     let sortedDictByValues = prosPMSresultsDict.sorted(by: {$1.value < $0.value})
-     let sortedDictByKeys = sortedDictByValues.sorted(by: {$1.key > $0.key})
-     print(sortedDictByKeys)
-     
-     var arrOrKeys = [Int]()
-     for (key, value) in sortedDictByValues {
-     // print(key)
-     arrOrKeys.append(key)
-     print(arrOrKeys)
-     }
-     
-     var resultArr = [Int]()
-     
-     let result = resultArr[0...k-1]
-     
-     return Array(result)
-     */
     
 }
 
