@@ -2,6 +2,8 @@
 
 import Foundation
 
+/*
+
 func bestProfessionals(pros: [[Int]], k: Int) -> [Int] { // trying to solve and return array of best results from worst to best
     
     // Step 1: Find a max_distance
@@ -116,8 +118,9 @@ func bestProfessionals(pros: [[Int]], k: Int) -> [Int] { // trying to solve and 
 
 print(bestProfessionals(pros: [[5, 4], [4, 3], [4, 3], [6, 5], [3, 5]], k: 2)) // should return [3, 1]
 
+*/
 
-func bestProfessionals2(pros: [[Int]], k: Int) -> [Int] { // trying to solve and return array of best results from worst to best
+func bestProfessionals2(pros: [[Int]]) { // trying to solve and return array of best results from worst to best
     
     // Step 1: Find a max_distance
     var maxDistance = 0
@@ -133,7 +136,7 @@ func bestProfessionals2(pros: [[Int]], k: Int) -> [Int] { // trying to solve and
     // and store that in dictionary, where the key is index of pro and value is pro's PMS number
      
     
-     var prosPMSresultsDict = [Int]()
+    // var prosPMSresultsDict = [Int]()
      var count = 0
     // this code is correct but I need update to make it work for all keys
 //    for tuple in pros {
@@ -167,18 +170,21 @@ func bestProfessionals2(pros: [[Int]], k: Int) -> [Int] { // trying to solve and
 //           count += 1
 //       }
     
+    var PMSscore = 0
+    var PMSscoreArr = [Int]()
     
-    for (index, pro) in pros.enumerated() {
-              prosPMSresultsDict[count] = (maxDistance - tuple[0]) * tuple[1]
+    for pro in pros {
+              PMSscore = (maxDistance - pro[0]) * pro[1]
               count += 1
+              PMSscoreArr.append(PMSscore)
           }
     
-    print("\(index) for PMS score \(prosPMSresultsDict)")
+    print("\(PMSscoreArr)")
     
     
     
-    
-    print(prosPMSresultsDict)
+    /*
+    //print(prosPMSresultsDict)
     
     // Step 3: sort dictionary by value
     
@@ -197,48 +203,15 @@ func bestProfessionals2(pros: [[Int]], k: Int) -> [Int] { // trying to solve and
         print(arrOrKeys)
     }
     
-    //let indexK = k-1
     var resultArr = [Int]()
-    
-    
-//    for (key, value) in sortedDictByValues {
-//        if resultArr.contains(value) && key > {
-//            continue
-//        } else if
-//        } else {
-//            resultArr.append(key)
-//        }
-//    }
     
     let result = resultArr[0...k-1]
     
-    
-    
     return Array(result)
-    
-    // I found the first choice of pro
-//    var largestValue = 0
-//    var keyForLargestValue = 0
-//    for (key, value) in sortedDictByValues {
-//        if value > largestValue {
-//            largestValue = value
-//            keyForLargestValue = key
-//        }
-//    }
-    
-    // need to finf all the choices
-    // let intIndex = 1 // where intIndex < myDictionary.count
-    //let index = myDictionary.index(myDictionary.startIndex, offsetBy: intIndex)
-    //myDictionary.keys[index]
-    
-//    let kIndexOnDict = sortedDictByValues.index(sortedDictByValues.endIndex, offsetBy: -k)
-//    var keyForLargestValue = [Int]()
-    
-
-    //print(keyForLargestValue)
+ */
     
 }
 
-print(bestProfessionals2(pros: [[5, 4], [4, 3], [4, 3], [6, 5], [3, 5]], k: 2)) // should return [3, 1]
+print(bestProfessionals2(pros: [[5, 4], [4, 3], [6, 5], [3, 5]])) // should return [3, 1]
 
 
